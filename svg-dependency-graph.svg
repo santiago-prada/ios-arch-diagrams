@@ -1,0 +1,337 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" width="1100" height="800">
+  <defs>
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.08)"/>
+    </filter>
+    <filter id="shadowSmall" x="-4%" y="-8%" width="108%" height="124%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.06)"/>
+    </filter>
+
+    <!-- Arrowhead markers -->
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#C7C7CC"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#FF3B30"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#007AFF"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5AC8FA"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#FF9500"/>
+    </marker>
+    <marker id="arrowDarkGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#636366"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="800" fill="#FFFFFF" rx="0" ry="0"/>
+
+  <!-- Title -->
+  <text x="550" y="32" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="20" font-weight="700" fill="#1D1D1F">Package Dependency Graph</text>
+  <text x="550" y="50" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#8E8E93">community.xcodeproj — Module Architecture</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: App Shell (y: 62 - 120) -->
+  <!-- ============================================================ -->
+  <rect x="20" y="62" width="1060" height="58" rx="8" ry="8" fill="#F9F9FB" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="36" y="78" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="600" fill="#8E8E93" letter-spacing="1">APP SHELL</text>
+
+  <!-- App Shell card -->
+  <rect x="350" y="82" width="400" height="32" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="350" y="82" width="4" height="32" rx="2" ry="0" fill="#8E8E93"/>
+  <text x="550" y="103" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">App Shell</text>
+  <text x="550" y="103" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F" opacity="0"> </text>
+  <text x="688" y="103" text-anchor="start" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" fill="#8E8E93">(community.xcodeproj)</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: Features (y: 130 - 280) -->
+  <!-- ============================================================ -->
+  <rect x="20" y="130" width="1060" height="155" rx="8" ry="8" fill="#F0FAF2" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="36" y="147" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="600" fill="#34C759" letter-spacing="1">FEATURES</text>
+
+  <!-- Feature Row 1 (y: 155) — 5 cards -->
+  <!-- FeatureHome -->
+  <rect x="38" y="155" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="38" y="155" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="132" y="176" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureHome</text>
+
+  <!-- FeatureVisitors -->
+  <rect x="242" y="155" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="242" y="155" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="336" y="176" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureVisitors</text>
+
+  <!-- FeatureHistory -->
+  <rect x="446" y="155" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="446" y="155" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="540" y="176" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureHistory</text>
+
+  <!-- FeatureAccount -->
+  <rect x="650" y="155" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="650" y="155" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="744" y="176" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureAccount</text>
+
+  <!-- FeatureAdmin -->
+  <rect x="854" y="155" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="854" y="155" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="948" y="176" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureAdmin</text>
+
+  <!-- Feature Row 2 (y: 200) — 5 cards -->
+  <!-- FeatureOnboarding -->
+  <rect x="38" y="200" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="38" y="200" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="132" y="221" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureOnboarding</text>
+
+  <!-- FeatureVideoCalling -->
+  <rect x="242" y="200" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="242" y="200" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="336" y="221" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureVideoCalling</text>
+
+  <!-- FeatureMobileCredentials -->
+  <rect x="446" y="200" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="446" y="200" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="540" y="221" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#1D1D1F">FeatureMobileCredentials</text>
+
+  <!-- FeatureContent -->
+  <rect x="650" y="200" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="650" y="200" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="744" y="221" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11.5" font-weight="500" fill="#1D1D1F">FeatureContent</text>
+
+  <!-- FeatureAnnouncements -->
+  <rect x="854" y="200" width="188" height="34" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="854" y="200" width="4" height="34" rx="2" ry="0" fill="#34C759"/>
+  <text x="948" y="221" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#1D1D1F">FeatureAnnouncements</text>
+
+  <!-- Feature count badge -->
+  <rect x="100" y="248" width="44" height="18" rx="9" ry="9" fill="#34C759" opacity="0.15"/>
+  <text x="122" y="260" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="600" fill="#34C759">×10</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: Domain (y: 295 - 370) -->
+  <!-- ============================================================ -->
+  <rect x="20" y="300" width="1060" height="70" rx="8" ry="8" fill="#EBF4FF" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="36" y="318" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="600" fill="#007AFF" letter-spacing="1">DOMAIN</text>
+
+  <!-- CommunityDomain card -->
+  <rect x="330" y="323" width="440" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="330" y="323" width="4" height="38" rx="2" ry="0" fill="#007AFF"/>
+  <text x="460" y="347" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="14" font-weight="600" fill="#1D1D1F">CommunityDomain</text>
+  <text x="560" y="347" text-anchor="start" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" fill="#8E8E93">Protocols + Use Cases</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: Core (y: 385 - 465) -->
+  <!-- ============================================================ -->
+  <rect x="20" y="385" width="1060" height="80" rx="8" ry="8" fill="#EFF9FE" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="36" y="403" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="600" fill="#5AC8FA" letter-spacing="1">CORE / INFRASTRUCTURE</text>
+
+  <!-- CommunityUI -->
+  <rect x="55" y="410" width="220" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="55" y="410" width="4" height="38" rx="2" ry="0" fill="#5AC8FA"/>
+  <text x="165" y="434" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">CommunityUI</text>
+
+  <!-- CommunityAnalytics -->
+  <rect x="300" y="410" width="220" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="300" y="410" width="4" height="38" rx="2" ry="0" fill="#AF52DE"/>
+  <text x="410" y="434" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">CommunityAnalytics</text>
+
+  <!-- CommunityNetworking -->
+  <rect x="545" y="410" width="240" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="545" y="410" width="4" height="38" rx="2" ry="0" fill="#5AC8FA"/>
+  <text x="665" y="434" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">CommunityNetworking</text>
+
+  <!-- CommunityMockData -->
+  <rect x="810" y="410" width="220" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="810" y="410" width="4" height="38" rx="2" ry="0" fill="#5AC8FA"/>
+  <text x="920" y="434" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">CommunityMockData</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 5: Data / Vendor (y: 480 - 560) -->
+  <!-- ============================================================ -->
+  <rect x="20" y="480" width="1060" height="80" rx="8" ry="8" fill="#F7F7F9" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="36" y="498" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="600" fill="#636366" letter-spacing="1">DATA / VENDOR</text>
+
+  <!-- CommunityDataModel -->
+  <rect x="55" y="505" width="220" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="55" y="505" width="4" height="38" rx="2" ry="0" fill="#636366"/>
+  <text x="165" y="529" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">CommunityDataModel</text>
+
+  <!-- CommunityKeychain -->
+  <rect x="300" y="505" width="220" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="300" y="505" width="4" height="38" rx="2" ry="0" fill="#636366"/>
+  <text x="410" y="529" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">CommunityKeychain</text>
+
+  <!-- MyQAttestation -->
+  <rect x="545" y="505" width="240" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="545" y="505" width="4" height="38" rx="2" ry="0" fill="#48484A"/>
+  <text x="665" y="529" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">MyQAttestation</text>
+  <text x="665" y="543" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#8E8E93">vendor</text>
+
+  <!-- MyQSmartReader -->
+  <rect x="810" y="505" width="220" height="38" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="810" y="505" width="4" height="38" rx="2" ry="0" fill="#48484A"/>
+  <text x="920" y="529" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="13" font-weight="600" fill="#1D1D1F">MyQSmartReader</text>
+  <text x="920" y="543" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#8E8E93">vendor</text>
+
+  <!-- ============================================================ -->
+  <!-- ARROWS — Dependencies -->
+  <!-- ============================================================ -->
+
+  <!-- === App Shell → Features (bundled fan-out) === -->
+  <!-- Trunk from App Shell center-bottom down to a split point -->
+  <path d="M550,114 L550,148" stroke="#C7C7CC" stroke-width="1.5" fill="none"/>
+  <!-- Fan-out lines to Row 1 feature cards -->
+  <line x1="550" y1="148" x2="132" y2="155" stroke="#C7C7CC" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="550" y1="148" x2="336" y2="155" stroke="#C7C7CC" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="550" y1="148" x2="540" y2="155" stroke="#C7C7CC" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="550" y1="148" x2="744" y2="155" stroke="#C7C7CC" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="550" y1="148" x2="948" y2="155" stroke="#C7C7CC" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <!-- Fan to row 2 -->
+  <path d="M550,148 L132,148 L132,200" stroke="#C7C7CC" stroke-width="1" fill="none" marker-end="url(#arrowGray)"/>
+  <path d="M550,148 L336,148 L336,200" stroke="#C7C7CC" stroke-width="1" fill="none" marker-end="url(#arrowGray)"/>
+  <path d="M540,189 L540,200" stroke="#C7C7CC" stroke-width="1" fill="none" marker-end="url(#arrowGray)"/>
+  <path d="M550,148 L744,148 L744,200" stroke="#C7C7CC" stroke-width="1" fill="none" marker-end="url(#arrowGray)"/>
+  <path d="M550,148 L948,148 L948,200" stroke="#C7C7CC" stroke-width="1" fill="none" marker-end="url(#arrowGray)"/>
+
+  <!-- === All Features → CommunityDomain (merged trunk) === -->
+  <!-- Collect from bottom of feature rows into a merge point then down to Domain -->
+  <!-- Row 1 bottoms converge -->
+  <path d="M132,189 L132,264 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M336,189 L336,262 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M540,189 L540,260 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M744,189 L744,262 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M948,189 L948,264 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <!-- Row 2 bottoms converge -->
+  <path d="M132,234 L132,268 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M336,234 L336,266 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M540,234 L540,270 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M744,234 L744,268 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M948,234 L948,266 L550,274" stroke="#007AFF" stroke-width="1" fill="none" opacity="0.35"/>
+  <!-- Merged trunk to CommunityDomain -->
+  <path d="M550,274 L550,323" stroke="#007AFF" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
+  <text x="558" y="298" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#007AFF" font-weight="500">all features</text>
+
+  <!-- === All Features → CommunityUI (merged arrows) === -->
+  <!-- Simplified: single merged path from feature zone left side down to CommunityUI -->
+  <path d="M80,274 C80,390 140,390 165,410" stroke="#5AC8FA" stroke-width="2" fill="none" marker-end="url(#arrowTeal)" opacity="0.7"/>
+  <text x="60" y="370" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#5AC8FA" font-weight="500" transform="rotate(-72,60,370)">UI</text>
+
+  <!-- === FeatureHome → CommunityAnalytics (special arrow) === -->
+  <path d="M132,234 C132,320 300,350 410,410" stroke="#AF52DE" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.7"/>
+  <circle cx="410" cy="410" r="3" fill="#AF52DE" opacity="0.7"/>
+  <text x="220" y="330" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#AF52DE" font-weight="500" transform="rotate(-35,220,330)">analytics</text>
+
+  <!-- === CommunityDomain → CommunityDataModel === -->
+  <path d="M460,361 C350,385 230,440 165,505" stroke="#007AFF" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)" opacity="0.6"/>
+
+  <!-- === CommunityNetworking → CommunityDomain === -->
+  <path d="M665,410 C665,390 600,370 570,361" stroke="#5AC8FA" stroke-width="1.5" fill="none" marker-end="url(#arrowTeal)" opacity="0.6"/>
+
+  <!-- === CommunityNetworking → CommunityDataModel === -->
+  <path d="M600,448 C480,475 300,490 200,505" stroke="#5AC8FA" stroke-width="1.5" fill="none" marker-end="url(#arrowTeal)" opacity="0.5"/>
+
+  <!-- === CommunityNetworking → CommunityKeychain === -->
+  <path d="M665,448 C620,470 500,490 430,505" stroke="#5AC8FA" stroke-width="1.5" fill="none" marker-end="url(#arrowTeal)" opacity="0.5"/>
+
+  <!-- === CommunityMockData → CommunityDomain === -->
+  <path d="M870,410 C870,385 700,370 570,361" stroke="#5AC8FA" stroke-width="1.5" fill="none" marker-end="url(#arrowTeal)" opacity="0.5"/>
+
+  <!-- === CommunityMockData → CommunityDataModel === -->
+  <path d="M870,448 C750,490 400,510 275,524" stroke="#5AC8FA" stroke-width="1.5" fill="none" marker-end="url(#arrowTeal)" opacity="0.4"/>
+
+  <!-- === FeatureMobileCredentials → MyQAttestation (vendor) === -->
+  <path d="M540,234 C540,380 640,440 665,505" stroke="#FF9500" stroke-width="1.5" fill="none" marker-end="url(#arrowOrange)" stroke-dasharray="6,3"/>
+
+  <!-- === FeatureMobileCredentials → MyQSmartReader (vendor) === -->
+  <path d="M580,234 C620,380 860,440 920,505" stroke="#FF9500" stroke-width="1.5" fill="none" marker-end="url(#arrowOrange)" stroke-dasharray="6,3"/>
+
+  <!-- Vendor dependency label -->
+  <text x="740" y="390" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#FF9500" font-weight="500">vendor deps</text>
+
+  <!-- === FeatureAdmin → FeatureAnnouncements (RED exception) === -->
+  <path d="M948,189 C990,192 1010,198 1010,205 C1010,212 990,216 948,217" stroke="#FF3B30" stroke-width="2" fill="none" marker-end="url(#arrowRed)" stroke-dasharray="6,3"/>
+  <rect x="1016" y="193" width="56" height="26" rx="5" ry="5" fill="#FFF5F5" stroke="#FF3B30" stroke-width="0.5"/>
+  <text x="1044" y="204" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="600" fill="#FF3B30">allowed</text>
+  <text x="1044" y="214" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="600" fill="#FF3B30">exception</text>
+
+  <!-- ============================================================ -->
+  <!-- LEGEND -->
+  <!-- ============================================================ -->
+  <rect x="700" y="585" width="380" height="195" rx="12" ry="12" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1" filter="url(#shadow)"/>
+  <text x="720" y="607" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="12" font-weight="600" fill="#1D1D1F">Legend</text>
+
+  <!-- Legend items -->
+  <!-- App Shell -->
+  <rect x="720" y="618" width="24" height="12" rx="3" ry="3" fill="#F2F2F7" stroke="#8E8E93" stroke-width="1"/>
+  <text x="752" y="628" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">App Shell</text>
+
+  <!-- Feature -->
+  <rect x="720" y="638" width="24" height="12" rx="3" ry="3" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="720" y="638" width="4" height="12" rx="2" ry="0" fill="#34C759"/>
+  <text x="752" y="648" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">Feature Package</text>
+
+  <!-- Domain -->
+  <rect x="720" y="658" width="24" height="12" rx="3" ry="3" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="720" y="658" width="4" height="12" rx="2" ry="0" fill="#007AFF"/>
+  <text x="752" y="668" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">Domain</text>
+
+  <!-- Core -->
+  <rect x="720" y="678" width="24" height="12" rx="3" ry="3" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="720" y="678" width="4" height="12" rx="2" ry="0" fill="#5AC8FA"/>
+  <text x="752" y="688" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">Core / Infrastructure</text>
+
+  <!-- Analytics -->
+  <rect x="720" y="698" width="24" height="12" rx="3" ry="3" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="720" y="698" width="4" height="12" rx="2" ry="0" fill="#AF52DE"/>
+  <text x="752" y="708" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">Analytics</text>
+
+  <!-- Data / Vendor -->
+  <rect x="720" y="718" width="24" height="12" rx="3" ry="3" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="720" y="718" width="4" height="12" rx="2" ry="0" fill="#636366"/>
+  <text x="752" y="728" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">Data / Vendor</text>
+
+  <!-- Arrow legend -->
+  <line x1="872" y1="624" x2="912" y2="624" stroke="#C7C7CC" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="920" y="628" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">depends on</text>
+
+  <line x1="872" y1="644" x2="912" y2="644" stroke="#FF9500" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrowOrange)"/>
+  <text x="920" y="648" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">vendor dep</text>
+
+  <line x1="872" y1="664" x2="912" y2="664" stroke="#FF3B30" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRed)"/>
+  <text x="920" y="668" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#FF3B30" font-weight="500">exception</text>
+
+  <line x1="872" y1="684" x2="912" y2="684" stroke="#AF52DE" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="912" cy="684" r="2.5" fill="#AF52DE"/>
+  <text x="920" y="688" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#1D1D1F">analytics</text>
+
+  <!-- Note -->
+  <text x="720" y="754" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" fill="#8E8E93" font-style="italic">Arrows indicate "depends on" direction (top to bottom)</text>
+  <text x="720" y="768" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" fill="#8E8E93" font-style="italic">Red dashed = only allowed cross-feature dependency</text>
+
+  <!-- ============================================================ -->
+  <!-- Dependency flow summary (bottom-left) -->
+  <!-- ============================================================ -->
+  <rect x="20" y="585" width="340" height="80" rx="10" ry="10" fill="#F2F2F7" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="40" y="607" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" font-weight="600" fill="#1D1D1F">Dependency Flow (top → bottom)</text>
+  <text x="40" y="625" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#8E8E93">App Shell → Features → Domain → Data</text>
+  <text x="40" y="641" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#8E8E93">Features → Core (UI, Analytics, Networking)</text>
+  <text x="40" y="657" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" fill="#8E8E93">MobileCredentials → Vendor (attestation, reader)</text>
+
+  <!-- Stats badges -->
+  <rect x="380" y="585" width="90" height="40" rx="10" ry="10" fill="#F2F2F7" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="425" y="603" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="18" font-weight="700" fill="#007AFF">18</text>
+  <text x="425" y="618" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#8E8E93">Total Modules</text>
+
+  <rect x="480" y="585" width="90" height="40" rx="10" ry="10" fill="#F2F2F7" stroke="#E5E5EA" stroke-width="0.5"/>
+  <text x="525" y="603" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="18" font-weight="700" fill="#34C759">5</text>
+  <text x="525" y="618" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#8E8E93">Layers</text>
+
+  <rect x="580" y="585" width="90" height="40" rx="10" ry="10" fill="#FFF5F5" stroke="#FF3B30" stroke-width="0.5" opacity="0.8"/>
+  <text x="625" y="603" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="18" font-weight="700" fill="#FF3B30">1</text>
+  <text x="625" y="618" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" fill="#FF3B30">Exception</text>
+
+</svg>
