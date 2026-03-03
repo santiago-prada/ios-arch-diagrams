@@ -1,256 +1,280 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="1200" height="650">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1300" width="2400" height="1300">
   <defs>
     <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
-      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="rgba(0,0,0,0.06)"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="rgba(0,0,0,0.06)"/>
     </filter>
     <filter id="shadowSmall" x="-2%" y="-5%" width="104%" height="115%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.08)"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.08)"/>
     </filter>
-    <pattern id="gridDot" width="4" height="4" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.5" fill="#C7C7CC"/>
+    <pattern id="gridDot" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1" fill="#C7C7CC"/>
     </pattern>
+    <style>
+      text { font-family: -apple-system, 'SF Pro Display', system-ui, sans-serif; }
+    </style>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="650" fill="#FFFFFF" rx="0" ry="0"/>
+  <rect width="2400" height="1300" fill="#FFFFFF"/>
 
   <!-- Title Area -->
-  <text x="40" y="38" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="20" font-weight="700" fill="#1D1D1F">Implementation Roadmap</text>
-  <text x="40" y="56" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="12" font-weight="400" fill="#8E8E93">12-Week Migration Timeline — 2 Developer Tracks</text>
+  <text x="80" y="76" font-size="40" font-weight="700" fill="#1D1D1F">Implementation Roadmap</text>
+  <text x="80" y="112" font-size="24" font-weight="400" fill="#8E8E93">12-Week Migration Timeline — 2 Developer Tracks</text>
 
-  <!-- Chart Area Constants: left=160, top=90, right=1160, barAreaTop=90 -->
-  <!-- Week columns: each week = (1160-160)/12 = 83.33px -->
+  <!-- Chart Area Constants: left=320, top=180, right=2320, barAreaTop=180 -->
+  <!-- Week columns: each week = (2320-320)/12 = 166.67px -->
 
   <!-- Week Header Background -->
-  <rect x="160" y="72" width="1000" height="28" fill="#F2F2F7" rx="6" ry="6"/>
+  <rect x="320" y="144" width="2000" height="56" fill="#F2F2F7" rx="12"/>
 
   <!-- Week Labels -->
-  <g font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" font-weight="500" fill="#8E8E93" text-anchor="middle">
-    <text x="201.7" y="90">W1</text>
-    <text x="285" y="90">W2</text>
-    <text x="368.3" y="90">W3</text>
-    <text x="451.7" y="90">W4</text>
-    <text x="535" y="90">W5</text>
-    <text x="618.3" y="90">W6</text>
-    <text x="701.7" y="90">W7</text>
-    <text x="785" y="90">W8</text>
-    <text x="868.3" y="90">W9</text>
-    <text x="951.7" y="90">W10</text>
-    <text x="1035" y="90">W11</text>
-    <text x="1118.3" y="90">W12</text>
+  <g font-size="22" font-weight="500" fill="#8E8E93" text-anchor="middle">
+    <text x="403.3" y="180">W1</text>
+    <text x="570" y="180">W2</text>
+    <text x="736.7" y="180">W3</text>
+    <text x="903.3" y="180">W4</text>
+    <text x="1070" y="180">W5</text>
+    <text x="1236.7" y="180">W6</text>
+    <text x="1403.3" y="180">W7</text>
+    <text x="1570" y="180">W8</text>
+    <text x="1736.7" y="180">W9</text>
+    <text x="1903.3" y="180">W10</text>
+    <text x="2070" y="180">W11</text>
+    <text x="2236.7" y="180">W12</text>
   </g>
 
   <!-- Vertical Gridlines (dotted) -->
-  <g stroke="#E5E5EA" stroke-width="1" stroke-dasharray="3,4" opacity="0.7">
-    <line x1="243.3" y1="100" x2="243.3" y2="545"/>
-    <line x1="326.7" y1="100" x2="326.7" y2="545"/>
-    <line x1="410" y1="100" x2="410" y2="545"/>
-    <line x1="493.3" y1="100" x2="493.3" y2="545"/>
-    <line x1="576.7" y1="100" x2="576.7" y2="545"/>
-    <line x1="660" y1="100" x2="660" y2="545"/>
-    <line x1="743.3" y1="100" x2="743.3" y2="545"/>
-    <line x1="826.7" y1="100" x2="826.7" y2="545"/>
-    <line x1="910" y1="100" x2="910" y2="545"/>
-    <line x1="993.3" y1="100" x2="993.3" y2="545"/>
-    <line x1="1076.7" y1="100" x2="1076.7" y2="545"/>
+  <g stroke="#E5E5EA" stroke-width="1" stroke-dasharray="6,8" opacity="0.7">
+    <line x1="486.7" y1="200" x2="486.7" y2="1090"/>
+    <line x1="653.3" y1="200" x2="653.3" y2="1090"/>
+    <line x1="820" y1="200" x2="820" y2="1090"/>
+    <line x1="986.7" y1="200" x2="986.7" y2="1090"/>
+    <line x1="1153.3" y1="200" x2="1153.3" y2="1090"/>
+    <line x1="1320" y1="200" x2="1320" y2="1090"/>
+    <line x1="1486.7" y1="200" x2="1486.7" y2="1090"/>
+    <line x1="1653.3" y1="200" x2="1653.3" y2="1090"/>
+    <line x1="1820" y1="200" x2="1820" y2="1090"/>
+    <line x1="1986.7" y1="200" x2="1986.7" y2="1090"/>
+    <line x1="2153.3" y1="200" x2="2153.3" y2="1090"/>
   </g>
 
   <!-- Swim Lane Backgrounds -->
-  <rect x="0" y="105" width="1200" height="210" fill="#FAFBFF" opacity="0.5"/>
-  <rect x="0" y="315" width="1200" height="230" fill="#FFFAF5" opacity="0.5"/>
+  <rect x="0" y="210" width="2400" height="420" fill="#FAFBFF" opacity="0.5"/>
+  <rect x="0" y="630" width="2400" height="460" fill="#FFFAF5" opacity="0.5"/>
 
   <!-- Swim Lane Divider -->
-  <line x1="0" y1="315" x2="1200" y2="315" stroke="#E5E5EA" stroke-width="1"/>
+  <line x1="0" y1="630" x2="2400" y2="630" stroke="#E5E5EA" stroke-width="2"/>
 
   <!-- Row Labels -->
-  <g font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif">
-    <!-- Developer 1 Label -->
-    <rect x="12" y="115" width="136" height="40" rx="8" ry="8" fill="#007AFF" filter="url(#shadowSmall)"/>
-    <text x="80" y="133" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Developer 1</text>
-    <text x="80" y="147" font-size="10" font-weight="400" fill="rgba(255,255,255,0.8)" text-anchor="middle">UI &amp; Features</text>
+  <!-- Developer 1 Label -->
+  <rect x="24" y="230" width="272" height="80" rx="16" fill="#007AFF" filter="url(#shadowSmall)"/>
+  <text x="160" y="266" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Developer 1</text>
+  <text x="160" y="294" font-size="20" font-weight="400" fill="rgba(255,255,255,0.8)" text-anchor="middle">UI &amp; Features</text>
 
-    <!-- Developer 2 Label -->
-    <rect x="12" y="325" width="136" height="40" rx="8" ry="8" fill="#FF9500" filter="url(#shadowSmall)"/>
-    <text x="80" y="343" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Developer 2</text>
-    <text x="80" y="357" font-size="10" font-weight="400" fill="rgba(255,255,255,0.8)" text-anchor="middle">Domain &amp; Features</text>
-  </g>
+  <!-- Developer 2 Label -->
+  <rect x="24" y="650" width="272" height="80" rx="16" fill="#FF9500" filter="url(#shadowSmall)"/>
+  <text x="160" y="686" font-size="26" font-weight="600" fill="#FFFFFF" text-anchor="middle">Developer 2</text>
+  <text x="160" y="714" font-size="20" font-weight="400" fill="rgba(255,255,255,0.8)" text-anchor="middle">Domain &amp; Features</text>
 
   <!-- Phase Labels (above bars) -->
-  <g font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#8E8E93" text-anchor="middle" letter-spacing="0.5">
-    <text x="201.7" y="118">PHASE 0</text>
-    <text x="326.7" y="118">PHASE 0b</text>
-    <text x="701.7" y="118">PHASE 3: FEATURES</text>
-    <text x="951.7" y="118">PHASE 4</text>
-    <text x="1076.7" y="118">QE</text>
+  <g font-size="18" font-weight="600" fill="#8E8E93" text-anchor="middle" letter-spacing="1">
+    <text x="403.3" y="236">PHASE 0</text>
+    <text x="653.3" y="236">PHASE 0b</text>
+    <text x="1403.3" y="236">PHASE 3: FEATURES</text>
+    <text x="1903.3" y="236">PHASE 4</text>
+    <text x="2153.3" y="236">QE</text>
 
-    <text x="201.7" y="328">PHASE 0</text>
-    <text x="326.7" y="328">PHASE 1</text>
-    <text x="535" y="328">PH 2</text>
-    <text x="785" y="328">PHASE 3: FEATURES</text>
-    <text x="951.7" y="328">PH 4</text>
-    <text x="1076.7" y="328">QE</text>
+    <text x="403.3" y="656">PHASE 0</text>
+    <text x="653.3" y="656">PHASE 1</text>
+    <text x="1070" y="656">PH 2</text>
+    <text x="1570" y="656">PHASE 3: FEATURES</text>
+    <text x="1903.3" y="656">PH 4</text>
+    <text x="2153.3" y="656">QE</text>
   </g>
 
   <!-- ======================== DEVELOPER 1 BARS ======================== -->
 
   <!-- Week 1: Rename Packages + README (teal) -->
-  <rect x="160" y="130" width="83.3" height="22" rx="6" ry="6" fill="#5AC8FA" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="201.7" y="145" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">Rename + README</text>
+  <rect x="320" y="260" width="166.7" height="44" rx="12" fill="#5AC8FA" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="403.3" y="288" font-size="18" font-weight="500" fill="#FFFFFF" text-anchor="middle">Rename + README</text>
 
   <!-- Weeks 2-4: CommunityUI Consolidation (blue) -->
-  <rect x="243.3" y="130" width="250" height="22" rx="6" ry="6" fill="#007AFF" opacity="0.9" filter="url(#shadowSmall)"/>
-  <text x="368.3" y="145" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="500" fill="#FFFFFF" text-anchor="middle">CommunityUI Consolidation (9 tickets)</text>
+  <rect x="486.7" y="260" width="500" height="44" rx="12" fill="#007AFF" opacity="0.9" filter="url(#shadowSmall)"/>
+  <text x="736.7" y="282" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">CommunityUI Consolidation (9 tickets)</text>
+  <text x="736.7" y="298" font-size="16" font-weight="400" fill="rgba(255,255,255,0.7)" text-anchor="middle">~3 weeks</text>
 
   <!-- Weeks 5-6: FeatureHistory ~4d (green) -->
-  <rect x="493.3" y="160" width="66.7" height="22" rx="6" ry="6" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="526.7" y="175" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureHistory</text>
+  <rect x="986.7" y="320" width="133.3" height="44" rx="12" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="1053.3" y="348" font-size="18" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureHistory</text>
 
   <!-- Week 6: FeatureContent ~3d (green) -->
-  <rect x="560" y="160" width="50" height="22" rx="6" ry="6" fill="#34C759" opacity="0.75" filter="url(#shadowSmall)"/>
-  <text x="585" y="175" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">Content</text>
+  <rect x="1120" y="320" width="100" height="44" rx="12" fill="#34C759" opacity="0.75" filter="url(#shadowSmall)"/>
+  <text x="1170" y="348" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">Content</text>
 
   <!-- Weeks 6-7: FeatureAccount ~5d (green) -->
-  <rect x="610" y="160" width="83.3" height="22" rx="6" ry="6" fill="#34C759" opacity="0.9" filter="url(#shadowSmall)"/>
-  <text x="651.7" y="175" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureAccount</text>
+  <rect x="1220" y="320" width="166.7" height="44" rx="12" fill="#34C759" opacity="0.9" filter="url(#shadowSmall)"/>
+  <text x="1303.3" y="348" font-size="18" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureAccount</text>
 
   <!-- Dev 1 Feature row 2 -->
   <!-- Weeks 7-8: FeatureOnboarding ~4d (green) -->
-  <rect x="693.3" y="190" width="66.7" height="22" rx="6" ry="6" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="726.7" y="205" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">Onboarding</text>
+  <rect x="1386.7" y="380" width="133.3" height="44" rx="12" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="1453.3" y="408" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">Onboarding</text>
 
   <!-- Weeks 8-9: FeatureVideoCalling ~5d (green) -->
-  <rect x="760" y="190" width="83.3" height="22" rx="6" ry="6" fill="#34C759" filter="url(#shadowSmall)"/>
-  <text x="801.7" y="205" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">VideoCalling</text>
+  <rect x="1520" y="380" width="166.7" height="44" rx="12" fill="#34C759" filter="url(#shadowSmall)"/>
+  <text x="1603.3" y="408" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">VideoCalling</text>
 
   <!-- Week 10: Slim Main App (gray) -->
-  <rect x="910" y="160" width="83.3" height="22" rx="6" ry="6" fill="#8E8E93" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="951.7" y="175" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">Slim Main App</text>
+  <rect x="1820" y="320" width="166.7" height="44" rx="12" fill="#8E8E93" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="1903.3" y="348" font-size="18" font-weight="500" fill="#FFFFFF" text-anchor="middle">Slim Main App</text>
 
   <!-- Weeks 11-12: Realign BDD Tests (pink) -->
-  <rect x="993.3" y="160" width="166.7" height="22" rx="6" ry="6" fill="#FF2D55" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="1076.7" y="175" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="500" fill="#FFFFFF" text-anchor="middle">Realign BDD Tests</text>
-
-  <!-- Connecting arrows Dev 1 -->
-  <line x1="243.3" y1="141" x2="243.3" y2="141" stroke="#007AFF" stroke-width="1.5" opacity="0.4"/>
+  <rect x="1986.7" y="320" width="333.3" height="44" rx="12" fill="#FF2D55" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="2153.3" y="348" font-size="20" font-weight="500" fill="#FFFFFF" text-anchor="middle">Realign BDD Tests</text>
 
   <!-- ======================== DEVELOPER 2 BARS ======================== -->
 
   <!-- Week 1: CI Boundary + MigrationFlags (teal) -->
-  <rect x="160" y="340" width="83.3" height="22" rx="6" ry="6" fill="#5AC8FA" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="201.7" y="355" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">CI Script + Flags</text>
+  <rect x="320" y="680" width="166.7" height="44" rx="12" fill="#5AC8FA" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="403.3" y="708" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">CI Script + Flags</text>
 
   <!-- Weeks 2-4: CommunityDomain (orange) -->
-  <rect x="243.3" y="340" width="250" height="22" rx="6" ry="6" fill="#FF9500" opacity="0.9" filter="url(#shadowSmall)"/>
-  <text x="368.3" y="355" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="500" fill="#FFFFFF" text-anchor="middle">CommunityDomain (9 tickets)</text>
+  <rect x="486.7" y="680" width="500" height="44" rx="12" fill="#FF9500" opacity="0.9" filter="url(#shadowSmall)"/>
+  <text x="736.7" y="702" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">CommunityDomain (9 tickets)</text>
+  <text x="736.7" y="718" font-size="16" font-weight="400" fill="rgba(255,255,255,0.7)" text-anchor="middle">~3 weeks</text>
 
   <!-- Detail items under Domain bar -->
-  <g font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" fill="#FF9500" opacity="0.7">
-    <text x="253" y="376">Scaffold</text>
-    <text x="293" y="376">Repos</text>
-    <text x="323" y="376">Devices</text>
-    <text x="363" y="376">Guest</text>
-    <text x="393" y="376">Session</text>
-    <text x="433" y="376">Announce</text>
-    <text x="470" y="376">Net</text>
+  <g font-size="16" fill="#FF9500" opacity="0.7">
+    <text x="506" y="752">Scaffold</text>
+    <text x="586" y="752">Repos</text>
+    <text x="646" y="752">Devices</text>
+    <text x="726" y="752">Guest</text>
+    <text x="786" y="752">Session</text>
+    <text x="866" y="752">Announce</text>
+    <text x="940" y="752">Net</text>
   </g>
 
-  <!-- Week 5: CommunityAnalytics (purple) -->
-  <rect x="493.3" y="340" width="83.3" height="22" rx="6" ry="6" fill="#AF52DE" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="535" y="355" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">Analytics (3)</text>
+  <!-- Week 5: CommunityAnalytics + CommunityNetworking (purple/teal split) — FIXED -->
+  <clipPath id="splitBarClip">
+    <rect x="986.7" y="680" width="166.7" height="44" rx="12"/>
+  </clipPath>
+  <g clip-path="url(#splitBarClip)">
+    <rect x="986.7" y="680" width="83.3" height="44" fill="#AF52DE"/>
+    <rect x="1070" y="680" width="83.3" height="44" fill="#5AC8FA"/>
+  </g>
+  <rect x="986.7" y="680" width="166.7" height="44" rx="12" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <text x="1070" y="702" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">Analytics +</text>
+  <text x="1070" y="718" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">Networking</text>
+  <text x="1070" y="746" font-size="18" font-weight="600" fill="#AF52DE" text-anchor="middle">PH 2</text>
 
   <!-- Weeks 6-7: FeatureAnnouncements ~4d (green) -->
-  <rect x="576.7" y="390" width="66.7" height="22" rx="6" ry="6" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="610" y="405" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">Announcements</text>
+  <rect x="1153.3" y="780" width="133.3" height="44" rx="12" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="1220" y="808" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">Announcements</text>
 
   <!-- Weeks 7-8: FeatureAdmin ~5d (green) -->
-  <rect x="643.3" y="390" width="83.3" height="22" rx="6" ry="6" fill="#34C759" opacity="0.9" filter="url(#shadowSmall)"/>
-  <text x="685" y="405" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureAdmin</text>
+  <rect x="1286.7" y="780" width="166.7" height="44" rx="12" fill="#34C759" opacity="0.9" filter="url(#shadowSmall)"/>
+  <text x="1370" y="808" font-size="18" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureAdmin</text>
 
   <!-- Weeks 8-9: FeatureVisitors ~5d (green) -->
-  <rect x="726.7" y="420" width="83.3" height="22" rx="6" ry="6" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="768.3" y="435" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureVisitors</text>
+  <rect x="1453.3" y="840" width="166.7" height="44" rx="12" fill="#34C759" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="1536.7" y="868" font-size="18" font-weight="500" fill="#FFFFFF" text-anchor="middle">FeatureVisitors</text>
 
   <!-- Weeks 8-10: FeatureMobileCredentials ~6d (green) -->
-  <rect x="810" y="420" width="100" height="22" rx="6" ry="6" fill="#34C759" filter="url(#shadowSmall)"/>
-  <text x="860" y="435" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">MobileCredentials</text>
+  <rect x="1620" y="840" width="200" height="44" rx="12" fill="#34C759" filter="url(#shadowSmall)"/>
+  <text x="1720" y="868" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">MobileCredentials</text>
 
   <!-- Weeks 9-10+: FeatureHome ~8d (green, largest) -->
-  <rect x="576.7" y="450" width="133.3" height="22" rx="6" ry="6" fill="#34C759" filter="url(#shadowSmall)"/>
-  <text x="643.3" y="465" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" text-anchor="middle">FeatureHome (largest)</text>
+  <rect x="1153.3" y="900" width="266.7" height="44" rx="12" fill="#34C759" filter="url(#shadowSmall)"/>
+  <text x="1286.7" y="928" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">FeatureHome (largest)</text>
 
   <!-- Week 10: Update Extension Targets (gray) -->
-  <rect x="910" y="390" width="83.3" height="22" rx="6" ry="6" fill="#8E8E93" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="951.7" y="405" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="8" font-weight="500" fill="#FFFFFF" text-anchor="middle">Update Extensions</text>
+  <rect x="1820" y="780" width="166.7" height="44" rx="12" fill="#8E8E93" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="1903.3" y="808" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">Update Extensions</text>
 
   <!-- Weeks 11-12: Integration Testing (pink) -->
-  <rect x="993.3" y="390" width="166.7" height="22" rx="6" ry="6" fill="#FF2D55" opacity="0.85" filter="url(#shadowSmall)"/>
-  <text x="1076.7" y="405" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="10" font-weight="500" fill="#FFFFFF" text-anchor="middle">Integration Testing</text>
+  <rect x="1986.7" y="780" width="333.3" height="44" rx="12" fill="#FF2D55" opacity="0.85" filter="url(#shadowSmall)"/>
+  <text x="2153.3" y="808" font-size="20" font-weight="500" fill="#FFFFFF" text-anchor="middle">Integration Testing</text>
 
   <!-- ======================== MILESTONE DIAMONDS ======================== -->
   <g>
     <!-- End of Week 1: Phase 0 Complete -->
-    <polygon points="243.3,268 251.3,278 243.3,288 235.3,278" fill="#5AC8FA" filter="url(#shadowSmall)"/>
-    <text x="243.3" y="302" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#5AC8FA" text-anchor="middle">Phase 0</text>
+    <polygon points="486.7,1016 502.7,1036 486.7,1056 470.7,1036" fill="#5AC8FA" filter="url(#shadowSmall)"/>
+    <text x="486.7" y="1084" font-size="18" font-weight="600" fill="#5AC8FA" text-anchor="middle">Phase 0</text>
 
     <!-- End of Week 4: Phase 1 + CommunityUI Complete -->
-    <polygon points="493.3,268 501.3,278 493.3,288 485.3,278" fill="#007AFF" filter="url(#shadowSmall)"/>
-    <text x="493.3" y="302" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#007AFF" text-anchor="middle">Phase 0b/1</text>
+    <polygon points="986.7,1016 1002.7,1036 986.7,1056 970.7,1036" fill="#007AFF" filter="url(#shadowSmall)"/>
+    <text x="986.7" y="1084" font-size="18" font-weight="600" fill="#007AFF" text-anchor="middle">Phase 0b/1</text>
 
     <!-- End of Week 5: Phase 2 Complete -->
-    <polygon points="576.7,268 584.7,278 576.7,288 568.7,278" fill="#AF52DE" filter="url(#shadowSmall)"/>
-    <text x="576.7" y="302" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#AF52DE" text-anchor="middle">Phase 2</text>
+    <polygon points="1153.3,1016 1169.3,1036 1153.3,1056 1137.3,1036" fill="#AF52DE" filter="url(#shadowSmall)"/>
+    <text x="1153.3" y="1084" font-size="18" font-weight="600" fill="#AF52DE" text-anchor="middle">Phase 2</text>
 
     <!-- End of Week 10: All Features Extracted -->
-    <polygon points="993.3,508 1001.3,518 993.3,528 985.3,518" fill="#34C759" filter="url(#shadowSmall)"/>
-    <text x="993.3" y="542" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#34C759" text-anchor="middle">All Extracted</text>
+    <polygon points="1986.7,1016 2002.7,1036 1986.7,1056 1970.7,1036" fill="#34C759" filter="url(#shadowSmall)"/>
+    <text x="1986.7" y="1084" font-size="18" font-weight="600" fill="#34C759" text-anchor="middle">All Extracted</text>
 
     <!-- End of Week 12: Migration Complete -->
-    <polygon points="1160,508 1168,518 1160,528 1152,518" fill="#FF2D55" filter="url(#shadowSmall)"/>
-    <text x="1155" y="542" font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="9" font-weight="600" fill="#FF2D55" text-anchor="middle">Complete!</text>
+    <polygon points="2320,1016 2336,1036 2320,1056 2304,1036" fill="#FF2D55" filter="url(#shadowSmall)"/>
+    <text x="2310" y="1084" font-size="18" font-weight="600" fill="#FF2D55" text-anchor="middle">Complete!</text>
   </g>
 
   <!-- Milestone connecting line -->
-  <line x1="243.3" y1="278" x2="1160" y2="518" stroke="#E5E5EA" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="486.7" y1="1036" x2="2320" y2="1036" stroke="#E5E5EA" stroke-width="2" stroke-dasharray="8,6" opacity="0.5"/>
+
+  <!-- ======================== DEADLINE MARKER — FIXED ======================== -->
+  <!-- Red vertical deadline at ~Week 14-15 position (right edge) -->
+  <line x1="2380" y1="144" x2="2380" y2="1056" stroke="#FF3B30" stroke-width="3" stroke-dasharray="10,6"/>
+  <rect x="2230" y="100" width="300" height="52" rx="10" fill="#FF3B30" filter="url(#shadowSmall)"/>
+  <text x="2380" y="124" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">myQ SDK Login Migration</text>
+  <text x="2380" y="144" font-size="14" font-weight="500" fill="rgba(255,255,255,0.9)" text-anchor="middle">End of Q2 2026</text>
+  <!-- Triangle pointer -->
+  <polygon points="2380,152 2370,142 2390,142" fill="#FF3B30"/>
+  <!-- Small red diamond at bottom of deadline line -->
+  <polygon points="2380,1060 2388,1070 2380,1080 2372,1070" fill="#FF3B30"/>
 
   <!-- ======================== LEGEND ======================== -->
-  <rect x="40" y="572" width="1120" height="56" rx="12" ry="12" fill="#F2F2F7" filter="url(#shadow)"/>
+  <rect x="80" y="1144" width="2240" height="112" rx="24" fill="#F2F2F7" filter="url(#shadow)"/>
 
-  <g font-family="-apple-system, 'SF Pro Display', system-ui, sans-serif" font-size="11" font-weight="500">
-    <text x="60" y="596" fill="#8E8E93" font-size="10" font-weight="600" letter-spacing="0.5">LEGEND</text>
+  <g font-size="22" font-weight="500">
+    <text x="120" y="1192" fill="#8E8E93" font-size="20" font-weight="600" letter-spacing="1">LEGEND</text>
 
     <!-- Infrastructure -->
-    <rect x="110" y="586" width="14" height="14" rx="3" ry="3" fill="#5AC8FA"/>
-    <text x="128" y="597" fill="#1D1D1F">Infrastructure</text>
+    <rect x="220" y="1172" width="28" height="28" rx="6" fill="#5AC8FA"/>
+    <text x="256" y="1194" fill="#1D1D1F">Infrastructure</text>
 
     <!-- CommunityUI -->
-    <rect x="220" y="586" width="14" height="14" rx="3" ry="3" fill="#007AFF"/>
-    <text x="238" y="597" fill="#1D1D1F">CommunityUI</text>
+    <rect x="440" y="1172" width="28" height="28" rx="6" fill="#007AFF"/>
+    <text x="476" y="1194" fill="#1D1D1F">CommunityUI</text>
 
     <!-- Domain -->
-    <rect x="340" y="586" width="14" height="14" rx="3" ry="3" fill="#FF9500"/>
-    <text x="358" y="597" fill="#1D1D1F">Domain</text>
+    <rect x="680" y="1172" width="28" height="28" rx="6" fill="#FF9500"/>
+    <text x="716" y="1194" fill="#1D1D1F">Domain</text>
 
     <!-- Analytics -->
-    <rect x="420" y="586" width="14" height="14" rx="3" ry="3" fill="#AF52DE"/>
-    <text x="438" y="597" fill="#1D1D1F">Analytics</text>
+    <rect x="840" y="1172" width="28" height="28" rx="6" fill="#AF52DE"/>
+    <text x="876" y="1194" fill="#1D1D1F">Analytics</text>
 
     <!-- Features -->
-    <rect x="520" y="586" width="14" height="14" rx="3" ry="3" fill="#34C759"/>
-    <text x="538" y="597" fill="#1D1D1F">Features</text>
+    <rect x="1040" y="1172" width="28" height="28" rx="6" fill="#34C759"/>
+    <text x="1076" y="1194" fill="#1D1D1F">Features</text>
 
     <!-- App Shell -->
-    <rect x="610" y="586" width="14" height="14" rx="3" ry="3" fill="#8E8E93"/>
-    <text x="628" y="597" fill="#1D1D1F">App Shell</text>
+    <rect x="1220" y="1172" width="28" height="28" rx="6" fill="#8E8E93"/>
+    <text x="1256" y="1194" fill="#1D1D1F">App Shell</text>
 
     <!-- QE -->
-    <rect x="710" y="586" width="14" height="14" rx="3" ry="3" fill="#FF2D55"/>
-    <text x="728" y="597" fill="#1D1D1F">QE</text>
+    <rect x="1420" y="1172" width="28" height="28" rx="6" fill="#FF2D55"/>
+    <text x="1456" y="1194" fill="#1D1D1F">QE</text>
 
     <!-- Milestone -->
-    <polygon points="790,593 796,586 802,593 796,600" fill="#1D1D1F" opacity="0.6"/>
-    <text x="808" y="597" fill="#1D1D1F">Milestone</text>
+    <polygon points="1580,1186 1592,1172 1604,1186 1592,1200" fill="#1D1D1F" opacity="0.6"/>
+    <text x="1616" y="1194" fill="#1D1D1F">Milestone</text>
+
+    <!-- Deadline -->
+    <line x1="1780" y1="1172" x2="1780" y2="1200" stroke="#FF3B30" stroke-width="3" stroke-dasharray="5,3"/>
+    <text x="1796" y="1194" fill="#1D1D1F">Critical Deadline</text>
   </g>
 
   <!-- Border -->
-  <rect x="0.5" y="0.5" width="1199" height="649" rx="0" ry="0" fill="none" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="1" y="1" width="2398" height="1298" fill="none" stroke="#E5E5EA" stroke-width="2"/>
 </svg>
