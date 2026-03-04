@@ -47,7 +47,7 @@ skinparam {
   }
 }
 
-title <font size=18 color=#1A1A1A><b>Target Architecture</b></font>\n<font size=12 color=#888888>Feature-First Modular — 18+ isolated SPM packages</font>
+title <font size=18 color=#1A1A1A><b>Target Architecture</b></font>\n<font size=12 color=#888888>Feature-First Modular — 21 isolated SPM packages</font>
 
 ' ══════════════════════════════════════════════════════════════
 ' LAYER 1: APP SHELL
@@ -75,6 +75,7 @@ package "FEATURE PACKAGES" as layerFeature #F5F5F5 {
   component "FeatureMobileCredentials\n<size:10><color:#CC6666>HIGH risk</color></size>" as fCreds
   component "FeatureContent" as fContent
   component "FeatureAnnouncements" as fAnnounce
+  component "FeaturePeopleManagement" as fPeople
 }
 
 ' ══════════════════════════════════════════════════════════════
@@ -130,6 +131,7 @@ appShell --> fVideo
 appShell --> fCreds
 appShell --> fContent
 appShell --> fAnnounce
+appShell --> fPeople
 
 ' Extensions (selective imports)
 extWidget --> fHome
@@ -147,12 +149,14 @@ fVideo --> domain
 fCreds --> domain
 fContent --> domain
 fAnnounce --> domain
+fPeople --> domain
 
 ' All Features → CommunityUI
 fHome --> ui
 fVisitors --> ui
 fHistory --> ui
 fAccount --> ui
+fPeople --> ui
 
 ' Selected Features → Analytics
 fHome ..> analytics : <color:#999999>events</color>

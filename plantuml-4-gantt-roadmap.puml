@@ -47,7 +47,7 @@ ganttDiagram {
 }
 </style>
 
-title Implementation Roadmap — 12 Weeks, 2 Developers, 39 Tickets
+title Implementation Roadmap — 12-13 Weeks, 2 Developers, 40 Tickets
 
 Project starts 2026-03-09
 
@@ -119,6 +119,10 @@ Project starts 2026-03-09
 [F3V] starts at [F3O]'s end
 [F3V] is colored in #C5D5C5
 
+[Dev 1: FeaturePeopleManagement (~5d)] as [F3PM] lasts 5 days
+[F3PM] starts at [F3V]'s end
+[F3PM] is colored in #C5D5C5
+
 -- Phase 3: Feature Extraction (Dev 2) --
 
 [Dev 2: FeatureAnnouncements (~4d)] as [F3An] lasts 4 days
@@ -148,7 +152,7 @@ Project starts 2026-03-09
 -- Phase 4: App Shell --
 
 [Dev 1: Slim main app target] as [P4D1] lasts 5 days
-[P4D1] starts at [F3V]'s end
+[P4D1] starts at [F3PM]'s end
 [P4D1] is colored in #D5D5D5
 
 [Dev 2: Update extension targets] as [P4D2] lasts 5 days

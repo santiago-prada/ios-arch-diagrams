@@ -40,7 +40,7 @@ skinparam {
   }
 }
 
-title <font size=18 color=#1A1A1A><b>Package Dependency Graph</b></font>\n<font size=12 color=#888888>20 modules across 6 layers — dependencies flow strictly downward</font>
+title <font size=18 color=#1A1A1A><b>Package Dependency Graph</b></font>\n<font size=12 color=#888888>21 modules across 6 layers — dependencies flow strictly downward</font>
 
 ' ══════════════════════════════════════════════════════════════
 ' LAYER 1: APP SHELL
@@ -54,7 +54,7 @@ package "App Shell" as L1 #F0F0F0 {
 ' LAYER 2: FEATURE PACKAGES (10)
 ' ══════════════════════════════════════════════════════════════
 
-package "Feature Packages  (10)" as L2 #F0F0F0 {
+package "Feature Packages  (11)" as L2 #F0F0F0 {
   [FeatureHome] as fHome
   [FeatureVisitors] as fVisitors
   [FeatureHistory] as fHistory
@@ -65,6 +65,7 @@ package "Feature Packages  (10)" as L2 #F0F0F0 {
   [FeatureMobileCredentials] as fCreds
   [FeatureContent] as fContent
   [FeatureAnnouncements] as fAnnounce
+  [FeaturePeopleManagement] as fPeople
 }
 
 ' ══════════════════════════════════════════════════════════════
@@ -120,6 +121,7 @@ app --> fVideo
 app --> fCreds
 app --> fContent
 app --> fAnnounce
+app --> fPeople
 
 ' All Features → Domain (protocol dependency)
 fHome --> domain
@@ -132,6 +134,7 @@ fVideo --> domain
 fCreds --> domain
 fContent --> domain
 fAnnounce --> domain
+fPeople --> domain
 
 ' All Features → CommunityUI
 fHome --> ui
@@ -144,6 +147,7 @@ fVideo --> ui
 fCreds --> ui
 fContent --> ui
 fAnnounce --> ui
+fPeople --> ui
 
 ' Selected → Analytics
 fHome ..> analytics
@@ -184,7 +188,7 @@ note bottom of networking
 end note
 
 note as N1
-  **20 total modules · 6 layers · 1 allowed exception**
+  **21 total modules · 6 layers · 1 allowed exception**
   (FeatureAdmin → FeatureAnnouncements)
 end note
 
