@@ -1,0 +1,189 @@
+@startgantt gantt-roadmap
+' ═══════════════════════════════════════════════════════════════
+' iOS Community App — 12-Week Implementation Roadmap
+' Dieter Rams style: as little design as possible
+' ═══════════════════════════════════════════════════════════════
+
+<style>
+ganttDiagram {
+  BackgroundColor     #FFFFFF
+  FontName            "Helvetica Neue"
+  FontColor           #333333
+  FontSize            12
+
+  task {
+    BackgroundColor   #E8E8E8
+    LineColor         #CCCCCC
+    FontSize          11
+    FontColor         #333333
+  }
+
+  milestone {
+    BackgroundColor   #333333
+    LineColor         #333333
+    FontColor         #333333
+    FontSize          11
+  }
+
+  separator {
+    BackgroundColor   #F5F5F5
+    LineColor         #D5D5D5
+    FontColor         #888888
+    FontSize          12
+    FontStyle         bold
+  }
+
+  timeline {
+    BackgroundColor   #F5F5F5
+    LineColor         #D5D5D5
+    FontColor         #888888
+    FontSize          11
+  }
+
+  closed {
+    BackgroundColor   #F5F5F5
+    FontColor         #CCCCCC
+  }
+}
+</style>
+
+title Implementation Roadmap — 12 Weeks, 2 Developers, 39 Tickets
+
+Project starts 2026-03-09
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 0 — Infrastructure (~1 week)
+' ══════════════════════════════════════════════════════════════
+
+-- Phase 0: Infrastructure --
+
+[Dev 1: Rename packages + README] as [P0D1] lasts 5 days
+[P0D1] is colored in #C5D5E0
+
+[Dev 2: CI boundary script + MigrationFlags] as [P0D2] lasts 5 days
+[P0D2] is colored in #C5D5E0
+
+[P0D2] starts at [P0D1]'s start
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 0b/1 — CommunityUI + CommunityDomain (~3 weeks)
+' ══════════════════════════════════════════════════════════════
+
+-- Phase 0b/1: Core Packages --
+
+[Dev 1: CommunityUI (9 tickets)] as [P1D1] lasts 15 days
+[P1D1] starts at [P0D1]'s end
+[P1D1] is colored in #B5C5D8
+
+[Dev 2: CommunityDomain (9 tickets)] as [P1D2] lasts 15 days
+[P1D2] starts at [P0D2]'s end
+[P1D2] is colored in #D5C5AA
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 2 — Analytics + Networking (~1-2 weeks)
+' ══════════════════════════════════════════════════════════════
+
+-- Phase 2: Analytics + Networking --
+
+[Dev 2: CommunityAnalytics (3 tickets)] as [P2A] lasts 5 days
+[P2A] starts at [P1D2]'s end
+[P2A] is colored in #D5C5D8
+
+[Dev 2: CommunityNetworking — SDK-ready (1 ticket, HIGH)] as [P2N] lasts 5 days
+[P2N] starts at [P2A]'s end
+[P2N] is colored in #E0C5C5
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 3 — Feature Extraction (~5 weeks)
+' ══════════════════════════════════════════════════════════════
+
+-- Phase 3: Feature Extraction (Dev 1) --
+
+[Dev 1: FeatureHistory (~4d)] as [F3H] lasts 4 days
+[F3H] starts at [P1D1]'s end
+[F3H] is colored in #C5D5C5
+
+[Dev 1: FeatureContent (~3d)] as [F3C] lasts 3 days
+[F3C] starts at [F3H]'s end
+[F3C] is colored in #C5D5C5
+
+[Dev 1: FeatureAccount (~5d)] as [F3A] lasts 5 days
+[F3A] starts at [F3C]'s end
+[F3A] is colored in #C5D5C5
+
+[Dev 1: FeatureOnboarding (~4d)] as [F3O] lasts 4 days
+[F3O] starts at [F3A]'s end
+[F3O] is colored in #C5D5C5
+
+[Dev 1: FeatureVideoCalling (~5d)] as [F3V] lasts 5 days
+[F3V] starts at [F3O]'s end
+[F3V] is colored in #C5D5C5
+
+-- Phase 3: Feature Extraction (Dev 2) --
+
+[Dev 2: FeatureAnnouncements (~4d)] as [F3An] lasts 4 days
+[F3An] starts at [P2N]'s end
+[F3An] is colored in #C5D5C5
+
+[Dev 2: FeatureAdmin (~5d)] as [F3Ad] lasts 5 days
+[F3Ad] starts at [F3An]'s end
+[F3Ad] is colored in #C5D5C5
+
+[Dev 2: FeatureVisitors (~5d)] as [F3Vi] lasts 5 days
+[F3Vi] starts at [F3Ad]'s end
+[F3Vi] is colored in #C5D5C5
+
+[Dev 2: FeatureMobileCredentials (~6d)] as [F3MC] lasts 6 days
+[F3MC] starts at [F3Vi]'s end
+[F3MC] is colored in #C5D5C5
+
+[Dev 2: FeatureHome (~8d, largest)] as [F3FH] lasts 8 days
+[F3FH] starts at [F3MC]'s end
+[F3FH] is colored in #C5D5C5
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 4 — App Shell (~1 week)
+' ══════════════════════════════════════════════════════════════
+
+-- Phase 4: App Shell --
+
+[Dev 1: Slim main app target] as [P4D1] lasts 5 days
+[P4D1] starts at [F3V]'s end
+[P4D1] is colored in #D5D5D5
+
+[Dev 2: Update extension targets] as [P4D2] lasts 5 days
+[P4D2] starts at [F3FH]'s end
+[P4D2] is colored in #D5D5D5
+
+' ══════════════════════════════════════════════════════════════
+' QE — Validation (~1 week)
+' ══════════════════════════════════════════════════════════════
+
+-- QE: Validation --
+
+[Dev 1: Realign BDD tests] as [QE1] lasts 5 days
+[QE1] starts at [P4D1]'s end
+[QE1] is colored in #D5C5C5
+
+[Dev 2: Integration testing] as [QE2] lasts 5 days
+[QE2] starts at [P4D2]'s end
+[QE2] is colored in #D5C5C5
+
+' ══════════════════════════════════════════════════════════════
+' MILESTONES
+' ══════════════════════════════════════════════════════════════
+
+[Phase 0 complete] as [M0] happens at [P0D1]'s end
+[Phase 0b/1 complete] as [M1] happens at [P1D1]'s end
+[Phase 2 complete] as [M2] happens at [P2N]'s end
+[All features extracted] as [M3] happens at [P4D2]'s end
+[Migration complete] as [M4] happens at [QE2]'s end
+
+' ══════════════════════════════════════════════════════════════
+' CRITICAL DEADLINE
+' ══════════════════════════════════════════════════════════════
+
+[myQ SDK Login Migration — End of Q2 2026] as [SDK] happens 2026-06-30
+[SDK] is colored in #CC6666
+
+@endgantt

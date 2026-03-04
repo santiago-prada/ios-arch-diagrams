@@ -1,0 +1,200 @@
+@startuml architecture-after
+' ═══════════════════════════════════════════════════════════════
+' iOS Community App — Target Architecture (Feature-First Modular)
+' Dieter Rams style: as little design as possible
+' ═══════════════════════════════════════════════════════════════
+
+skinparam {
+  defaultFontName           "Helvetica Neue"
+  defaultFontSize           13
+  defaultFontColor          #333333
+  backgroundColor           #FFFFFF
+  shadowing                 false
+
+  rectangle {
+    BackgroundColor         #FAFAFA
+    BorderColor             #D5D5D5
+    FontColor               #333333
+    RoundCorner             8
+    StereotypeFontSize      11
+    StereotypeFontColor     #999999
+  }
+
+  package {
+    BackgroundColor         #F8F8F8
+    BorderColor             #D5D5D5
+    FontColor               #555555
+    FontStyle               plain
+  }
+
+  component {
+    BackgroundColor         #FFFFFF
+    BorderColor             #D5D5D5
+    FontColor               #333333
+  }
+
+  note {
+    BackgroundColor         #F5F9F5
+    BorderColor             #B5CCB5
+    FontColor               #3A5A3A
+    FontSize                11
+  }
+
+  arrow {
+    Color                   #BBBBBB
+    FontColor               #999999
+    FontSize                11
+  }
+}
+
+title <font size=18 color=#1A1A1A><b>Target Architecture</b></font>\n<font size=12 color=#888888>Feature-First Modular — 18+ isolated SPM packages</font>
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 1: APP SHELL
+' ══════════════════════════════════════════════════════════════
+
+package "APP SHELL" as layerApp <<thin orchestration>> #F5F5F5 {
+  component "community.xcodeproj\n<size:10><color:#888888>DI assembly only</color></size>" as appShell
+  component "Widget\n<size:10><color:#888888>FeatureHome only</color></size>" as extWidget
+  component "Watch\n<size:10><color:#888888>CommunityUI only</color></size>" as extWatch
+  component "Intent\n<size:10><color:#888888>Domain only</color></size>" as extIntent
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 2: FEATURE PACKAGES
+' ══════════════════════════════════════════════════════════════
+
+package "FEATURE PACKAGES" as layerFeature #F5F5F5 {
+  component "FeatureHome\n<size:10><color:#CC6666>HIGH risk</color></size>" as fHome
+  component "FeatureVisitors\n<size:10><color:#CC9966>MED-HIGH</color></size>" as fVisitors
+  component "FeatureHistory" as fHistory
+  component "FeatureAccount" as fAccount
+  component "FeatureAdmin" as fAdmin
+  component "FeatureOnboarding" as fOnboarding
+  component "FeatureVideoCalling\n<size:10><color:#CC6666>HIGH risk</color></size>" as fVideo
+  component "FeatureMobileCredentials\n<size:10><color:#CC6666>HIGH risk</color></size>" as fCreds
+  component "FeatureContent" as fContent
+  component "FeatureAnnouncements" as fAnnounce
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 3: DOMAIN
+' ══════════════════════════════════════════════════════════════
+
+package "DOMAIN" as layerDomain #F5F5F5 {
+  component "CommunityDomain\n<size:10><color:#888888>Use Cases · Repository Protocols · Domain Models</color></size>" as domain
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 4: CORE / INFRASTRUCTURE
+' ══════════════════════════════════════════════════════════════
+
+package "CORE / INFRASTRUCTURE" as layerCore #F5F5F5 {
+  component "CommunityUI\n<size:10><color:#888888>Design system</color></size>" as ui
+  component "CommunityAnalytics\n<size:10><color:#888888>Analytics abstraction</color></size>" as analytics
+  component "MyQNetworking\n<size:10><color:#5A8A5A>PRESERVED — wraps myQ SDK</color></size>" as mqNet
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 5: DATA
+' ══════════════════════════════════════════════════════════════
+
+package "DATA" as layerData #F5F5F5 {
+  component "CommunityNetworking\n<size:10><color:#CC6666>SDK-ready design required</color></size>" as networking
+  component "CommunityMockData\n<size:10><color:#888888>Test fixtures</color></size>" as mockData
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 6: VENDOR / EXTERNAL
+' ══════════════════════════════════════════════════════════════
+
+package "VENDOR" as layerVendor <<existing packages>> #F5F5F5 {
+  component "CommunityDataModel" as dataModel
+  component "CommunityKeychain" as keychain
+  component "MyQAttestation" as attestation
+  component "MyQSmartReader" as smartReader
+}
+
+' ══════════════════════════════════════════════════════════════
+' DEPENDENCY ARROWS (strictly downward)
+' ══════════════════════════════════════════════════════════════
+
+' App Shell → Features
+appShell --> fHome
+appShell --> fVisitors
+appShell --> fHistory
+appShell --> fAccount
+appShell --> fAdmin
+appShell --> fOnboarding
+appShell --> fVideo
+appShell --> fCreds
+appShell --> fContent
+appShell --> fAnnounce
+
+' Extensions (selective imports)
+extWidget --> fHome
+extWatch --> ui
+extIntent --> domain
+
+' All Features → Domain
+fHome --> domain
+fVisitors --> domain
+fHistory --> domain
+fAccount --> domain
+fAdmin --> domain
+fOnboarding --> domain
+fVideo --> domain
+fCreds --> domain
+fContent --> domain
+fAnnounce --> domain
+
+' All Features → CommunityUI
+fHome --> ui
+fVisitors --> ui
+fHistory --> ui
+fAccount --> ui
+
+' Selected Features → Analytics
+fHome ..> analytics : <color:#999999>events</color>
+
+' One allowed exception
+fAdmin ..> fAnnounce : <color:#CC9966>allowed exception</color>
+
+' Domain → Data Model
+domain --> dataModel
+
+' Data layer
+networking --> mqNet : <color:#5A8A5A><b>HTTP infra</b></color>
+networking --> domain
+networking --> dataModel
+networking --> keychain
+mockData --> domain
+mockData --> dataModel
+
+' Vendor dependencies
+fCreds --> attestation
+fCreds --> smartReader
+
+' ── Key Constraint ────────────────────────────────────────────
+
+note right of networking
+  **CI-enforced boundary rule:**
+  Only CommunityNetworking
+  may import MyQNetworking.
+  Feature / Domain packages
+  are blocked at PR level.
+end note
+
+note right of mqNet
+  **Preserved unchanged.**
+  Wraps MyQNetworkServices (external SDK).
+  Contains CommunityBaseURLGenerator.
+end note
+
+' ── Footer ────────────────────────────────────────────────────
+
+legend bottom center
+  <font size=11 color=#999999>Dependencies flow strictly downward · No cross-feature imports · Compiler-enforced boundaries</font>
+end legend
+
+@enduml

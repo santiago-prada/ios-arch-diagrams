@@ -1,0 +1,191 @@
+@startuml dependency-graph
+' ═══════════════════════════════════════════════════════════════
+' iOS Community App — Package Dependency Graph
+' Dieter Rams style: as little design as possible
+' ═══════════════════════════════════════════════════════════════
+
+skinparam {
+  defaultFontName           "Helvetica Neue"
+  defaultFontSize           13
+  defaultFontColor          #333333
+  backgroundColor           #FFFFFF
+  shadowing                 false
+
+  package {
+    BackgroundColor         #F8F8F8
+    BorderColor             #D5D5D5
+    FontColor               #555555
+    FontStyle               plain
+    StereotypeFontSize      11
+    StereotypeFontColor     #999999
+  }
+
+  component {
+    BackgroundColor         #FFFFFF
+    BorderColor             #D5D5D5
+    FontColor               #333333
+  }
+
+  note {
+    BackgroundColor         #FFF8F0
+    BorderColor             #D5C5AA
+    FontColor               #6B5A3A
+    FontSize                11
+  }
+
+  arrow {
+    Color                   #BBBBBB
+    FontColor               #999999
+    FontSize                11
+  }
+}
+
+title <font size=18 color=#1A1A1A><b>Package Dependency Graph</b></font>\n<font size=12 color=#888888>20 modules across 6 layers — dependencies flow strictly downward</font>
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 1: APP SHELL
+' ══════════════════════════════════════════════════════════════
+
+package "App Shell" as L1 #F0F0F0 {
+  [community.xcodeproj] as app
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 2: FEATURE PACKAGES (10)
+' ══════════════════════════════════════════════════════════════
+
+package "Feature Packages  (10)" as L2 #F0F0F0 {
+  [FeatureHome] as fHome
+  [FeatureVisitors] as fVisitors
+  [FeatureHistory] as fHistory
+  [FeatureAccount] as fAccount
+  [FeatureAdmin] as fAdmin
+  [FeatureOnboarding] as fOnboarding
+  [FeatureVideoCalling] as fVideo
+  [FeatureMobileCredentials] as fCreds
+  [FeatureContent] as fContent
+  [FeatureAnnouncements] as fAnnounce
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 3: DOMAIN
+' ══════════════════════════════════════════════════════════════
+
+package "Domain" as L3 #F0F0F0 {
+  [CommunityDomain] as domain
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 4: CORE / INFRASTRUCTURE
+' ══════════════════════════════════════════════════════════════
+
+package "Core / Infrastructure" as L4 #F0F0F0 {
+  [CommunityUI] as ui
+  [CommunityAnalytics] as analytics
+  [MyQNetworking] as mqNet
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 5: DATA
+' ══════════════════════════════════════════════════════════════
+
+package "Data" as L5 #F0F0F0 {
+  [CommunityNetworking] as networking
+  [CommunityMockData] as mockData
+}
+
+' ══════════════════════════════════════════════════════════════
+' LAYER 6: VENDOR / EXTERNAL
+' ══════════════════════════════════════════════════════════════
+
+package "Vendor" as L6 #F0F0F0 {
+  [CommunityDataModel] as dataModel
+  [CommunityKeychain] as keychain
+  [MyQAttestation] as attestation
+  [MyQSmartReader] as smartReader
+}
+
+' ══════════════════════════════════════════════════════════════
+' DEPENDENCIES
+' ══════════════════════════════════════════════════════════════
+
+' App Shell → all Features
+app --> fHome
+app --> fVisitors
+app --> fHistory
+app --> fAccount
+app --> fAdmin
+app --> fOnboarding
+app --> fVideo
+app --> fCreds
+app --> fContent
+app --> fAnnounce
+
+' All Features → Domain (protocol dependency)
+fHome --> domain
+fVisitors --> domain
+fHistory --> domain
+fAccount --> domain
+fAdmin --> domain
+fOnboarding --> domain
+fVideo --> domain
+fCreds --> domain
+fContent --> domain
+fAnnounce --> domain
+
+' All Features → CommunityUI
+fHome --> ui
+fVisitors --> ui
+fHistory --> ui
+fAccount --> ui
+fAdmin --> ui
+fOnboarding --> ui
+fVideo --> ui
+fCreds --> ui
+fContent --> ui
+fAnnounce --> ui
+
+' Selected → Analytics
+fHome ..> analytics
+
+' One allowed cross-feature exception
+fAdmin ..> fAnnounce : <color:#CC9966>allowed\nexception</color>
+
+' Domain → Vendor
+domain --> dataModel
+
+' Data Layer → Core (the critical boundary)
+networking --> mqNet : <color:#5A8A5A><b>HTTP infra</b>\n<b>CI-enforced</b></color>
+networking --> domain
+networking --> dataModel
+networking --> keychain
+
+mockData --> domain
+mockData --> dataModel
+
+' Vendor dependencies (hardware SDKs)
+fCreds ..> attestation : <color:#999999>vendor</color>
+fCreds ..> smartReader : <color:#999999>vendor</color>
+
+' ── Annotations ───────────────────────────────────────────────
+
+note top of mqNet
+  **PRESERVED** — zero modifications.
+  Wraps MyQNetworkServices (external myQ SDK).
+  Hosts CommunityBaseURLGenerator.
+end note
+
+note bottom of networking
+  **CI-enforced rule:**
+  Only CommunityNetworking may
+  import MyQNetworking.
+  Feature and Domain packages
+  are blocked at PR level.
+end note
+
+note as N1
+  **20 total modules · 6 layers · 1 allowed exception**
+  (FeatureAdmin → FeatureAnnouncements)
+end note
+
+@enduml

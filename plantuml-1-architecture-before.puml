@@ -1,0 +1,143 @@
+@startuml architecture-before
+' ═══════════════════════════════════════════════════════════════
+' iOS Community App — Current Architecture (Monolith)
+' Dieter Rams style: as little design as possible
+' ═══════════════════════════════════════════════════════════════
+
+skinparam {
+  defaultFontName           "Helvetica Neue"
+  defaultFontSize           13
+  defaultFontColor          #333333
+  backgroundColor           #FFFFFF
+  shadowing                 false
+
+  rectangle {
+    BackgroundColor         #FAFAFA
+    BorderColor             #D5D5D5
+    FontColor               #333333
+    RoundCorner             8
+    StereotypeFontSize      11
+    StereotypeFontColor     #999999
+  }
+
+  package {
+    BackgroundColor         #F5F5F5
+    BorderColor             #CCCCCC
+    FontColor               #333333
+    FontStyle               plain
+  }
+
+  component {
+    BackgroundColor         #FFFFFF
+    BorderColor             #D5D5D5
+    FontColor               #333333
+  }
+
+  note {
+    BackgroundColor         #FFF3F3
+    BorderColor             #E8AAAA
+    FontColor               #8B3A3A
+    FontSize                11
+  }
+
+  arrow {
+    Color                   #AAAAAA
+    FontColor               #999999
+    FontSize                11
+  }
+}
+
+title <font size=18 color=#1A1A1A><b>Current Architecture</b></font>\n<font size=12 color=#888888>Monolithic — 350+ files in a single module</font>
+
+' ── Main Application Package ──────────────────────────────────
+
+package "community.xcodeproj" as app <<single target>> #F0F0F0 {
+
+  rectangle "**User Flows** (18)" as flows #FFFFFF {
+    component "Home" as fHome
+    component "Visitors" as fVisitors
+    component "History" as fHistory
+    component "Account" as fAccount
+    component "Onboarding" as fOnboarding
+    component "Video Calling" as fVideo
+    component "Admin" as fAdmin
+    component "Content" as fContent
+    component "Announcements" as fAnnounce
+    component "Mobile Credentials" as fCreds
+    component "  + 8 more  " as fMore #F5F5F5
+  }
+
+  rectangle "**Data Coordinators** (16)" as coords <<static singletons>> #FFFFFF {
+    component "AccountCoordinator" as cAccount
+    component "VisitorCoordinator" as cVisitor
+    component "DeviceCoordinator" as cDevice
+    component "HistoryCoordinator" as cHistory
+    component "AuthCoordinator" as cAuth
+    component "PushCoordinator" as cPush
+    component "  + 10 more  " as cMore #F5F5F5
+  }
+
+  rectangle "**Utilities & Categories** (28+)" as utils #FFFFFF {
+    component "Extensions" as uExt
+    component "Formatters" as uFmt
+    component "Helpers" as uHelp
+    component "Networking" as uNet
+    component "Analytics" as uAnalytics
+    component "UI Shared" as uUI
+    component "Constants" as uConst
+    component "KeychainUtil" as uKey
+    component "  + 13 more  " as uMore #F5F5F5
+  }
+}
+
+' ── Extension Targets ─────────────────────────────────────────
+
+rectangle "**Extension Targets**" as extensions #FFFFFF {
+  component "Widget" as extWidget
+  component "Watch" as extWatch
+  component "Intent" as extIntent
+}
+
+' ── Dependencies (everything coupled) ─────────────────────────
+
+flows -[hidden]down- coords
+coords -[hidden]down- utils
+
+' Cross-coupling (the problem)
+fHome ..> cAccount : <color:#CC6666>direct call</color>
+fVisitors ..> cDevice : <color:#CC6666>direct call</color>
+fHistory ..> cAuth : <color:#CC6666>direct call</color>
+fAdmin ..> cPush : <color:#CC6666>direct call</color>
+fOnboarding ..> uNet : <color:#CC6666>direct call</color>
+fVideo ..> uAnalytics : <color:#CC6666>direct call</color>
+
+' Extensions import everything
+extensions -up-> app : <color:#CC6666>imports entire module</color>
+
+' ── Problem Annotations ───────────────────────────────────────
+
+note right of flows
+  Every feature can call
+  every other feature —
+  **no visibility boundaries**
+end note
+
+note right of coords
+  Static singletons —
+  **impossible to inject
+  fakes for testing**
+end note
+
+note bottom of extensions
+  Widget, Watch, and Intent
+  carry **all 18 features**
+  as dead weight
+end note
+
+' ── Footer ────────────────────────────────────────────────────
+
+legend bottom center
+  <font size=11 color=#999999>Full module recompile on any change · No compilation firewall · AI agents must load entire context</font>
+end legend
+
+@enduml

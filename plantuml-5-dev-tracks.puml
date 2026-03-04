@@ -1,0 +1,160 @@
+@startuml dev-tracks
+' ═══════════════════════════════════════════════════════════════
+' iOS Community App — Developer Assignment Summary
+' Dieter Rams style: as little design as possible
+' ═══════════════════════════════════════════════════════════════
+
+skinparam {
+  defaultFontName           "Helvetica Neue"
+  defaultFontSize           12
+  defaultFontColor          #333333
+  backgroundColor           #FFFFFF
+  shadowing                 false
+
+  rectangle {
+    BackgroundColor         #FAFAFA
+    BorderColor             #D5D5D5
+    FontColor               #333333
+    RoundCorner             6
+    StereotypeFontSize      10
+    StereotypeFontColor     #999999
+  }
+
+  note {
+    BackgroundColor         #FFFFF5
+    BorderColor             #D5D5AA
+    FontColor               #555544
+    FontSize                11
+  }
+
+  arrow {
+    Color                   #CCCCCC
+    FontColor               #999999
+    FontSize                10
+  }
+}
+
+title <font size=18 color=#1A1A1A><b>Developer Assignment Summary</b></font>\n<font size=12 color=#888888>2 developers · 39 tickets · ~12 weeks</font>
+
+' ══════════════════════════════════════════════════════════════
+' COLUMN HEADERS
+' ══════════════════════════════════════════════════════════════
+
+|                  Developer 1\n<size:10><color:#888888>UI & Features</color></size>|                  Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 0: Infrastructure (~1 week)
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+:<font color=#888888><b>PHASE 0a · Infrastructure</b></font>
+Rename packages + Add README/AGENTS.md
+<font color=#999999>COMM2-10969, COMM2-10970 · ~3d</font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#888888><b>PHASE 0a · Infrastructure</b></font>
+CI boundary script + MigrationFlags
+<font color=#999999>COMM2-10971, COMM2-10972 · ~3d</font>;
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 0b/1: Core Packages (~3 weeks)
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+:<font color=#555588><b>PHASE 0b · CommunityUI</b></font>
+Consolidate 9 design system tickets
+<font color=#999999>COMM2-10952..10960 · 9 tickets · ~3 weeks</font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#886644><b>PHASE 1 · CommunityDomain</b></font>
+Scaffold package, extract repos, devices,
+guest use cases, session, announcements, networking
+<font color=#999999>COMM2-10973..10980, COMM2-10998 · 9 tickets · ~3 weeks</font>;
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 2: Analytics + Networking (~1-2 weeks)
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+:<font color=#AAAAAA><i>Waiting — CommunityUI wrapping up</i></font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#775588><b>PHASE 2 · CommunityAnalytics</b></font>
+Analytics abstraction layer
+<font color=#999999>COMM2-10981, COMM2-10982, COMM2-10983 · 3 tickets · ~1 week</font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#885555><b>PHASE 2 · CommunityNetworking</b></font>
+Repository implementations — <b>SDK-ready design required</b>
+<font color=#CC6666>HIGH RISK — myQ SDK Login deadline at end of Q2 2026</font>
+<font color=#999999>COMM2-10978 · ~1-2 weeks</font>;
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 3: Feature Extraction (~5 weeks)
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+:<font color=#446644><b>PHASE 3 · Feature Extraction</b></font>
+
+• **FeatureHistory** — COMM2-10984 · Low risk · ~4d
+• **FeatureContent** — COMM2-10985 · Low risk · ~3d
+• **FeatureAccount** — COMM2-10986 · Medium risk · ~5d
+• **FeatureOnboarding** — COMM2-10989 · Medium risk · ~4d
+• **FeatureVideoCalling** — COMM2-10991 · <font color=#CC6666>HIGH risk</font> · ~5d
+<font color=#999999>5 features · ~21 working days</font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#446644><b>PHASE 3 · Feature Extraction</b></font>
+
+• **FeatureAnnouncements** — COMM2-10997/98 · Medium risk · ~4d
+• **FeatureAdmin** — COMM2-10987 · Medium risk · ~5d
+• **FeatureVisitors** — COMM2-10988 · <font color=#CC9966>MED-HIGH risk</font> · ~5d
+• **FeatureMobileCredentials** — COMM2-10990 · <font color=#CC6666>HIGH risk</font> · ~6d
+• **FeatureHome** — COMM2-10992 · <font color=#CC6666>HIGH risk (largest)</font> · ~8d
+<font color=#999999>5 features · ~28 working days</font>;
+
+' ══════════════════════════════════════════════════════════════
+' PHASE 4: App Shell (~1 week)
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+:<font color=#888888><b>PHASE 4a · App Shell</b></font>
+Slim main app target
+<font color=#999999>COMM2-10993 · ~4d</font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#888888><b>PHASE 4b · Extensions</b></font>
+Update extension targets
+<font color=#999999>COMM2-10994 · ~3d</font>;
+
+' ══════════════════════════════════════════════════════════════
+' QE: Validation (~1 week)
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+:<font color=#885555><b>QE · Validation</b></font>
+Realign BDD tests
+<font color=#999999>COMM2-10999 · ~5d</font>;
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+:<font color=#885555><b>QE · Validation</b></font>
+Integration testing & validation
+<font color=#999999>~5d</font>;
+
+' ══════════════════════════════════════════════════════════════
+' SUMMARY
+' ══════════════════════════════════════════════════════════════
+
+|Developer 1\n<size:10><color:#888888>UI & Features</color></size>|
+stop
+
+|Developer 2\n<size:10><color:#888888>Domain & Features</color></size>|
+stop
+
+legend bottom center
+  <font size=14 color=#333333><b>12 weeks · 39 tickets · 2 developers</b></font>
+  <font size=11 color=#888888>Dev 1: Infrastructure + CommunityUI + 5 features + App Shell + BDD</font>
+  <font size=11 color=#888888>Dev 2: Infrastructure + CommunityDomain + Analytics + Networking + 5 features + Extensions + Integration</font>
+end legend
+
+@enduml
